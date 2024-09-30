@@ -1,0 +1,38 @@
+src/
+├── api/                  # API service layer for making backend calls
+│   └── auth.js           # Example: Authentication-related API calls
+├── assets/               # Static assets like images, icons, etc.
+│   └── logo.svg          # Example image
+├── components/           # Reusable UI components
+│   ├── Button.js         # Example: Reusable button component
+│   └── Loader.js         # Example: Loading spinner component
+├── features/             # Feature-based structure for screens and related logic
+│   ├── auth/             # Auth-related feature (login, signup, etc.)
+│   │   ├── components/   # Auth-specific UI components
+│   │   │   └── GoogleLogin.js
+│   │   ├── pages/        # Pages/screens for auth
+│   │   │   └── LoginScreen.js
+│   │   └── hooks/        # Custom hooks related to auth
+│   │       └── useAuth.js
+│   ├── home/             # Home feature-related logic
+│   │   ├── components/   # Home-specific components
+│   │   │   └── WelcomeMessage.js
+│   │   └── pages/        # Pages/screens for home
+│   │       └── HomeScreen.js
+├── hooks/                # Global custom hooks used across the app
+│   └── useLocalStorage.js # Example: Custom hook for localStorage
+├── routes/               # App-level routing management
+│   ├── PrivateRoute.js   # Route guard for authenticated routes
+│   └── AppRoutes.js      # Main routing logic
+├── services/             # Utility services (API calls, auth handling, etc.)
+│   ├── AuthService.js    # Service handling authentication logic (login, logout)
+│   └── StorageService.js # Service for managing localStorage or sessionStorage
+├── styles/               # Global styles and theming
+│   ├── themes.js         # Theme setup (if using styled-components or Chakra)
+│   └── global.css        # Global CSS styles
+├── utils/                # Utility functions/helpers
+│   └── formatDate.js     # Example: Function to format dates
+├── App.js                # Main app component
+├── main.js               # Entry point (Vite equivalent to index.js)
+├── index.css             # Global CSS (if using CSS)
+└── .env                  # Environment variables (e.g., Google client ID)
