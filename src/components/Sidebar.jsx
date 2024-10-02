@@ -7,8 +7,11 @@ const Sidebar = () => {
       <VStack align="start" spacing={4}>
         <NavLink
           to="/"
-          style={{ width: "100%" }}
-          activestyle={{ backgroundColor: "#2D3748" }}
+          style={({ isActive }) => ({
+            width: "100%",
+            backgroundColor: isActive ? "#2D3748" : "transparent", // Active state background color
+            borderRadius: "6px",
+          })}
         >
           <Text py={2} px={4} borderRadius="md" _hover={{ bg: "gray.700" }}>
             Dashboard
@@ -16,8 +19,11 @@ const Sidebar = () => {
         </NavLink>
         <NavLink
           to="/api-keys"
-          style={{ width: "100%" }}
-          activestyle={{ backgroundColor: "#2D3748" }}
+          style={({ isActive }) => ({
+            width: "100%",
+            backgroundColor: isActive ? "#2D3748" : "transparent",
+            borderRadius: "6px",
+          })}
         >
           <Text py={2} px={4} borderRadius="md" _hover={{ bg: "gray.700" }}>
             API Keys
@@ -25,8 +31,11 @@ const Sidebar = () => {
         </NavLink>
         <NavLink
           to="/activity-logs"
-          style={{ width: "100%" }}
-          activestyle={{ backgroundColor: "#2D3748" }}
+          style={({ isActive }) => ({
+            width: "100%",
+            backgroundColor: isActive ? "#2D3748" : "transparent",
+            borderRadius: "6px",
+          })}
         >
           <Text py={2} px={4} borderRadius="md" _hover={{ bg: "gray.700" }}>
             Activity Logs

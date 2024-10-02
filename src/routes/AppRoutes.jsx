@@ -20,7 +20,8 @@ const AppRoutes = () => (
           path="/"
           element={
             <Layout>
-              <PrivateRoute component={HomeScreen} />
+              <HomeScreen />
+              {/* <PrivateRoute component={HomeScreen} /> */}
             </Layout>
           }
         />
@@ -28,7 +29,8 @@ const AppRoutes = () => (
           path="/api-keys"
           element={
             <Layout>
-              <PrivateRoute component={ApiKeysPage} />
+              <ApiKeysPage />
+              {/* <PrivateRoute component={ApiKeysPage} /> */}
             </Layout>
           }
         />
@@ -36,7 +38,8 @@ const AppRoutes = () => (
           path="/activity-logs"
           element={
             <Layout>
-              <PrivateRoute component={ActivityLogsPage} />
+              <ActivityLogsPage />
+              {/* <PrivateRoute component={ActivityLogsPage} /> */}
             </Layout>
           }
         />
