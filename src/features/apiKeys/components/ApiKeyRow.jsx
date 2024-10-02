@@ -31,13 +31,14 @@ const ApiKeyRow = ({ apiKey }) => {
           icon={<FaCopy />}
           onClick={onCopy}
           mr={2}
+          color={"teal"}
         />
         <IconButton
           size="sm"
           aria-label="Delete API Key"
           icon={<FaTrash />}
           onClick={handleDelete}
-          colorScheme="red"
+          color={"red"}
         />
       </Td>
     </Tr>
