@@ -2,7 +2,7 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loading from "../components/Loading";
 import Layout from "../components/Layout";
-// import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const LoginScreen = lazy(() => import("../features/auth/pages/LoginScreen"));
 const HomeScreen = lazy(() => import("../features/home/pages/HomeScreen"));
@@ -20,8 +20,8 @@ const AppRoutes = () => (
           path="/"
           element={
             <Layout>
-              <HomeScreen />
-              {/* <PrivateRoute component={HomeScreen} /> */}
+              {/* <HomeScreen /> */}
+              <PrivateRoute component={HomeScreen} />
             </Layout>
           }
         />
@@ -29,8 +29,8 @@ const AppRoutes = () => (
           path="/api-keys"
           element={
             <Layout>
-              <ApiKeysPage />
-              {/* <PrivateRoute component={ApiKeysPage} /> */}
+              {/* <ApiKeysPage /> */}
+              <PrivateRoute component={ApiKeysPage} />
             </Layout>
           }
         />
@@ -38,8 +38,8 @@ const AppRoutes = () => (
           path="/activity-logs"
           element={
             <Layout>
-              <ActivityLogsPage />
-              {/* <PrivateRoute component={ActivityLogsPage} /> */}
+              {/* <ActivityLogsPage /> */}
+              <PrivateRoute component={ActivityLogsPage} />
             </Layout>
           }
         />

@@ -6,19 +6,18 @@ const LoginScreen = () => {
   const login = useAuthStore((state) => state.login);
 
   const handleLoginSuccess = (credentialResponse) => {
-    // const decoded = jwt_decode(credentialResponse.credential);
     console.log("Google User:", credentialResponse);
-    const clientSecret = import.meta.env.VITE_GOOGLE_CLIENT_SECRET;
+    const clientSecret = import.meta.env.VITE_GOOGLE_CLIENT_SECRET_BE;
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID_BE;
 
-    // Call your backend API to handle login
-    fetch("http://127.0.0.1:8000/api/v1/users/auth/convert-token", {
+    fetch("http://44.227.111.220/api/v1/users/auth/convert-token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
         grant_type: "convert_token",
-        client_id: credentialResponse.clientId,
+        client_id: clientId,
         client_secret: clientSecret,
         backend: "google-oauth2",
         token: credentialResponse.credential,
@@ -26,8 +25,8 @@ const LoginScreen = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        login(data.user);
         console.log("Login Successful", data);
+        login(data.user);
       })
       .catch((error) => console.error("Login error", error));
   };
