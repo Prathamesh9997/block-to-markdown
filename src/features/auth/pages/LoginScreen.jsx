@@ -11,7 +11,7 @@ const LoginScreen = () => {
     const clientId = import.meta.env.VITE_APP_CLIENT_ID_BE;
     const baseUrl = import.meta.env.VITE_BE_BASE_URL;
 
-    fetch(`${baseUrl}/api/v1/users/auth/convert-token`, {
+    fetch(`${baseUrl}/api/v1/users/auth/convert-token/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
