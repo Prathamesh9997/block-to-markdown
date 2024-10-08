@@ -7,10 +7,11 @@ const LoginScreen = () => {
 
   const handleLoginSuccess = (credentialResponse) => {
     console.log("Google User:", credentialResponse);
-    const clientSecret = import.meta.env.VITE_GOOGLE_CLIENT_SECRET_BE;
-    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID_BE;
+    const clientSecret = import.meta.env.VITE_APP_CLIENT_SECRET_BE;
+    const clientId = import.meta.env.VITE_APP_CLIENT_ID_BE;
+    const baseUrl = import.meta.env.VITE_BE_BASE_URL;
 
-    fetch("http://44.227.111.220/api/v1/users/auth/convert-token", {
+    fetch(`${baseUrl}/api/v1/users/auth/convert-token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
