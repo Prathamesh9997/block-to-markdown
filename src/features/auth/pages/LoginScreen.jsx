@@ -41,7 +41,7 @@ const LoginScreen = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Login Successful", data);
-        login(data.user); // Update Zustand store with user data
+        login(data); // Update Zustand store with user data
         navigate("/");
       })
       .catch((error) => console.error("Login error", error));
