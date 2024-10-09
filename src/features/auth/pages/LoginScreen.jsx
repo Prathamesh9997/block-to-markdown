@@ -2,8 +2,10 @@ import { Box, Button } from "@chakra-ui/react";
 import { useGoogleLogin } from "@react-oauth/google";
 import { useAuthStore } from "../../../store/useAuthStore";
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 const LoginScreen = () => {
+  const navigate = useNavigate();
   const login = useAuthStore((state) => state.login);
 
   // Initiating the Google login flow to get an access token
@@ -40,6 +42,7 @@ const LoginScreen = () => {
       .then((data) => {
         console.log("Login Successful", data);
         login(data.user); // Update Zustand store with user data
+        navigate("/");
       })
       .catch((error) => console.error("Login error", error));
   };
